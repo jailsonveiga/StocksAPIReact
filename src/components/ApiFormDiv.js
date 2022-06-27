@@ -8,6 +8,7 @@ export const ApiFormDiv = (props) => {
 
   const requestData = () => {
     console.log("Requesting Data...");
+    console.log(inputData);
 
     axios
       .get(BASE_URI + "all")
@@ -19,8 +20,6 @@ export const ApiFormDiv = (props) => {
         alert("Error: \n" + err.message);
         console.log(err);
       });
-
-    // console.log(inputData);
   };
 
   return (
@@ -36,7 +35,7 @@ export const ApiFormDiv = (props) => {
           setInputData(e.target.value);
         }}
       />
-      <button style={{ marginTop: 10 }} onClick={{ requestData }}>
+      <button style={{ marginTop: 10 }} onClick={requestData}>
         Request Data
       </button>
     </div>
